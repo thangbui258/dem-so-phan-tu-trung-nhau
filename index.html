@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số phàn tử trùng nhau trong mảng</title>
+</head>
+<body>
+<p id="kq"></p>
+<script>
+    let arr = ['a', 'a', 'b', 'c', 'd', 'a', 'a', 'b']
+    let y = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let count = 1;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] == arr[j]) {
+                arr[j] = y; //đánh dấu kí tự đã so sánh
+                y++;        //đánh dấu kí tự đã so sánh
+                count++;
+            }
+        }
+        if (typeof arr[i] == "string") {
+            if (count > 1) {
+                document.getElementById('kq').innerHTML += arr[i] + ' xuat hien ' + count + ' lan ' + '<br>'
+            }
+        }
+    }
+</script>
+</body>
+</html>
